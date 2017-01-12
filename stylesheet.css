@@ -1,0 +1,87 @@
+
+h1 {
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 70px;
+  }
+.fruit{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 15px;
+  font-weight: bold;
+}
+  .flash {
+     animation-name: flash;
+      animation-duration: 0.5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-play-state: running;
+  }
+
+  @keyframes flash {
+      from {color: red;}
+      to {color: black;}
+      to{color: green;}
+  }
+
+
+body, elementID, elementClass{
+  margin: 0px;
+  width: 100%;
+  background-image:url("gifs/fruitbackground.gif");
+}
+.fruit {
+  padding-left: 100px;
+}
+
+#apple {
+  display: inline-block;;
+  white-space: nowrap;
+}
+#orange {
+  display: inline-block;
+  white-space: nowrap;
+}
+#grape {
+  display: inline-block;
+  white-space: nowrap;
+}
+#banana{
+  display:inline-block;
+  white-space: nowrap;
+}
+button {
+  width: 5em;
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  margin: 20px auto;
+  color: #ccc;
+  background-color: #555;
+  background: -webkit-linear-gradient(#888, #555);
+  background: linear-gradient(#888, #555);
+  border: 0 none;
+  border-radius: 3px;
+  text-shadow: 0 -1px 0 #000;
+  box-shadow: 0 1px 0 #666, 0 5px 0 #444, 0 6px 6px rgba(0,0,0,0.6);
+  cursor: pointer
+}
+
+button:hover, button:focus{
+  -webkit-animation: pulsate 1.2s linear infinite;
+  animation: pulsate 1.2s linear infinite;
+}
+
+@-webkit-keyframes pulsate{
+  0%   { color: #ddd; text-shadow: 0 -1px 0 #000; }
+  50%  { color: #fff; text-shadow: 0 -1px 0 #444, 0 0 5px #ffd, 0 0 8px #fff; }
+  100% { color: #ddd; text-shadow: 0 -1px 0 #000; }
+}
+
+@keyframes pulsate{
+  0%   { color: #ddd; text-shadow: 0 -1px 0 #000; }
+  50%  { color: #fff; text-shadow: 0 -1px 0 #444, 0 0 5px #ffd, 0 0 8px #fff; }
+  100% { color: #ddd; text-shadow: 0 -1px 0 #000; }
+}
