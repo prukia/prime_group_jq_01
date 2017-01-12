@@ -1,3 +1,4 @@
+var availableCash = 1000;
 
 $(function (){
   console.log('Document is ready');
@@ -5,14 +6,6 @@ $(function (){
   window.setInterval(function(){
   setTimeout(timesUp,5000)
   }, 5000);
-
-
-  fruitPrice('apple', 500);
-  fruitPrice('orange', 500);
-  fruitPrice('banana', 500);
-  fruitPrice('grape', 500);
-
-
 
   var apple = new fruitPrice ('apple', 500);
   var orange = new fruitPrice ('orange', 500);
@@ -38,57 +31,61 @@ $(function (){
    function updatePrice (fruit) {
     fruit.marketPrice += (randomNumber((-50), 50));
     }
-  console.log(fruitArray);
-  $('#appleMarketPrice').empty();
-  $('#orangeMarketPrice').empty();
-  $('#bananaMarketPrice').empty();
-  $('#grapeMarketPrice').empty();
+    console.log(fruitArray);
+    $('#appleMarketPrice').empty();
+    $('#orangeMarketPrice').empty();
+    $('#bananaMarketPrice').empty();
+    $('#grapeMarketPrice').empty();
 
-  $('#appleMarketPrice').append(apple.marketPrice);
-  $('#orangeMarketPrice').append(orange.marketPrice);
-  $('#bananaMarketPrice').append(banana.marketPrice);
-  $('#grapeMarketPrice').append(grape.marketPrice);
+    $('#appleMarketPrice').append(apple.marketPrice);
+    $('#orangeMarketPrice').append(orange.marketPrice);
+    $('#bananaMarketPrice').append(banana.marketPrice);
+    $('#grapeMarketPrice').append(grape.marketPrice);
   }
 
-
-
-
-
+  $('#appleBuyButton').on('click', function() {
+    if (availableCash < apple.marketPrice) {
+      alert("You got no cash money!");
+    } else {
+    availableCash = (availableCash - apple.marketPrice);
+    console.log(availableCash);
+    $('#userAvailableCash').empty();
+    $('#userAvailableCash').append(availableCash);
+    }
+  })
+  $('#orangeBuyButton').on('click', function() {
+    if (availableCash < orange.marketPrice) {
+      alert("You got no cash money!");
+    } else {
+    availableCash = (availableCash - orange.marketPrice);
+    console.log(availableCash);
+    $('#userAvailableCash').empty();
+    $('#userAvailableCash').append(availableCash);
+    }
+  })
+  $('#bananaBuyButton').on('click', function() {
+    if (availableCash < banana.marketPrice) {
+      alert("You got no cash money!");
+    } else {
+    availableCash = (availableCash - banana.marketPrice);
+    console.log(availableCash);
+    $('#userAvailableCash').empty();
+    $('#userAvailableCash').append(availableCash);
+    }
+  })
+  $('#grapeBuyButton').on('click', function() {
+    if (availableCash < grape.marketPrice) {
+      alert("You got no cash money!");
+    } else {
+    availableCash = (availableCash - grape.marketPrice);
+    console.log(availableCash);
+    $('#userAvailableCash').empty();
+    $('#userAvailableCash').append(availableCash);
+    }
+  })
 
 });
-// setTimeout(timesUp, 5000);
 
-// console.log(fruitArray);
-
-
-
-// console.log(fruitPriceArray);
-//
-// console.log(fruitArray);
-
-
-// setTimeout(priceChange, time)
-//     priceChange (fruitArray){
-//     var change = randomNumber((-.50)..50)
-//     for(var i=0; i < 4; i++){
-//      change += fruitArray[i];
-//    }
-//  }
-
-// function fruitPrice(name,marketPrice) {
-//   this.name = name;
-//   this.marketPrice = marketPrice;
-// }
-//
-// function timesUp () {
-//   for (var i=0; i < fruitArray.length; i++){
-//    updatePrice(fruitArray[i]);
-//  }
-//  function updatePrice (fruit) {
-//   fruit.marketPrice += (randomNumber((-50), 50));
-//   }
-// console.log(fruitArray);
-// }
 
 function randomNumber(min, max){
     return Math.floor(Math.random() * (1 + max - min) + min);
