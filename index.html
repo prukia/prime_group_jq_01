@@ -2,52 +2,50 @@
 <html>
 <head>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript" src="app.js"></script>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-  <title>Cash Money Fruit Stand</title>
-</head>
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <title>Cash Money Fruit Stand</title>
+  </head>
 <body>
   <h1 class= "flash">Cash Money Fruit Stand</h1>
   <section>
-    <div id="apple" class="fruit">
-      <img src = "gifs/apple.gif"/>
-      <p>Price: $<span id="appleMarketPrice"></span></p>
-      <button id="appleBuyButton">BUY</button>
-      <p id="appleInventory"class="flash">Total Available:</p>
-    </div>
+<div id="apple" class="fruit">
+  <img src = "gifs/apple.gif" border = "5"/>
+  <p>Price:<span id="appleMarketPrice"></span></p>
+  <button id="appleBuyButton">BUY</button>
+  <p>Total Purchased:<span id="appleInventory"class="flash"></span></p>
+</div>
 
-    <div id="orange" class="fruit">
-      <img src = "gifs/oranges.gif" width="200" height="200" />
-      <p>Price: $<span id="orangeMarketPrice"></span></p>
-      <button id="orangeBuyButton">BUY</button>
-      <p id="orangeInventory"class="flash">Total Available:</p>
-    </div>
+<div id="orange" class="fruit">
+  <img src="gifs/oranges.gif" width="200" height="200" border = "5" box-shadow="5px" "5px" "5px" "#000"/>
+  <p>Price:<span id="orangeMarketPrice"></span></p>
+  <button id="orangeBuyButton">BUY</button>
+  <p>Total Purchased:<span id="orangeInventory"class="flash"></span></p>
+</div>
 
-    <div id="banana" class="fruit">
-      <img src = "gifs/banana.gif" />
-      <p>Price: $<span id="bananaMarketPrice"></span></p>
-      <button id="bananaBuyButton">BUY</button>
-      <p id="bananaInventory"class="flash">Total Available:</p>
-    </div>
+<div id="banana" class="fruit">
+  <img src="gifs/banana.gif" border = "5"/>
+  <p>Price:<span id="bananaMarketPrice"></span></p>
+  <button id="bananaBuyButton">BUY</button>
+  <p>Total Purchased:<span id="bananaInventory"class="flash"></span></p>
+</div>
 
-    <div id="grape" class="fruit">
-      <img src="gifs/grapes.gif" width="200" height="200" />
-      <p>Price: $<span id="grapeMarketPrice"></span></p>
-      <button id="grapeBuyButton">BUY</button>
-      <p id="grapeInventory"class="flash">Total Available:</p>
-    </div>
-
+<div id="grape" class="fruit">
+  <img src="gifs/grapes.gif" width="200" height="200" border = "5"/>
+  <p>Price:<span id="grapeMarketPrice"></span></p>
+  <button id="grapeBuyButton">BUY</button>
+  <p>Total Purchased:<span id="grapeInventory"class="flash"></span></p>
+</div>
 
   </section>
   <footer>
-    <h3>Available Cash $<span id= "userAvailableCash"class="flash">100</span></h3>
-    <h4 id= "userInventory"class="flash"> Fruit On Hand: </h4>
+    <h3>Available Cash: <span id= "userAvailableCash"class="flash"></span></h3>
     <p id= "appleAvgPrice"class="flash">Apple Average Price:</p>
     <p id= "orangeAvgPrice"class="flash">Orange Average Price:</p>
     <p id= "bananaAvgPrice"class="flash">Banana Average Price:</p>
