@@ -5,6 +5,12 @@ var orangeTotal = 0;
 var bananaTotal = 0;
 var grapeTotal = 0;
 
+var appleAvg = [];
+var appleAverage = 0;
+
+var orangeAvg = [];
+var orange
+
 $(function (){
   console.log('Document is ready');
 
@@ -65,6 +71,14 @@ $(function (){
     appleTotal++;
     $('#appleInventory').empty();
     $('#appleInventory').append(appleTotal);
+    appleAvg.push(apple.marketPrice);
+    for (var i = 0; i < appleAvg.length; i++) {
+      appleAverage += Number(appleAvg[i]);
+    }
+      appleAverage = Number(appleAverage / appleAvg.length);
+      $('#appleAvgPrice').text('');
+      $('#appleAvgPrice').append(appleAverage.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+
     }
   })
   $('#orangeBuyButton').on('click', function() {
@@ -78,6 +92,13 @@ $(function (){
     orangeTotal++;
     $('#orangeInventory').empty();
     $('#orangeInventory').append(orangeTotal);
+    orangeAvg.push(orange.marketPrice);
+    for (var i = 0; i < orangeAvg.length; i++) {
+      orangeAverage += Number(orangeAvg[i]);
+    }
+      orangeAverage = Number(orangeAverage / orangeAvg.length);
+      $('#orangeAvgPrice').text('');
+      $('#orangeAvgPrice').append(orangeAverage.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
     }
   })
   $('#bananaBuyButton').on('click', function() {
