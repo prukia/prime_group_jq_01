@@ -8,17 +8,7 @@
 
 *Date Created:* Jan 12th, 2017
 
-## Fruit Market jQuery challenge
-Created 4 commodities:
-1. Apples
-2. Oranges
-3. Bananas
-4. Grapes
-
-Includes following changing variables:
-* Market price
-* Available cash
-* Fruit Average Price
+*Completed Hard and Pro Mode*
 
 ### Instructions:
 For this challenge, you will be working with 4 commodities; Apples, Oranges, Bananas, and Grapes. Delicious, right?
@@ -34,3 +24,9 @@ Available to the user is a total cash and an inventory display that shows how mu
 Clicking on the display for each of the fruits allows the user to buy one of the fruits, at market price, which will be deducted from the total cash. The user is not allowed to spend more than they have.
 
 The user will start with $100.
+
+### Hard Mode
+Create a button below each of the Fruit buttons that allows the User to ‘sell’ one of their fruits of the same type at the current market price. This will also remove one from their inventory. The user should be not able to sell fruits they do not already own.
+
+### Pro Mode
+Limit the application experience to five minutes. At the end, stop the price fluctuation, sell all of the fruits in their inventory at current market price, and then display the total money they earned from the experience.
