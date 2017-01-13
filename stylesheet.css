@@ -1,4 +1,7 @@
-
+h3{
+  text-align: center;
+  font-size: 40px;
+}
 h1 {
   text-align: center;
   font-family: 'Press Start 2P', cursive;
@@ -23,8 +26,6 @@ h1 {
   @keyframes flash {
       from {color: red;}
       to{color: green;}
-
-
   }
 
 
@@ -34,7 +35,7 @@ body, elementID, elementClass{
   background-image:url("gifs/fruitbackground.gif");
 }
 .fruit {
-  padding-left: 100px;
+  padding-left: 90px;
 }
 
 #apple {
@@ -54,7 +55,7 @@ body, elementID, elementClass{
   white-space: nowrap;
 }
 button {
-  width: 5em;
+  width: 6.5em;
   display: block;
   font-size: 1.5em;
   font-weight: bold;
@@ -91,4 +92,9 @@ button:hover, button:focus{
 
 footer {
   display: inline;
+}
+.bottomtext{
+  font-size: 40px;
+  display: inline;
+  text-align: center;
 }

@@ -6,23 +6,20 @@ var bananaTotal = 0;
 var grapeTotal = 0;
 
 var appleAvg = [];
-var appleAverage = 0;
-
 var orangeAvg = [];
-var orangeAverage = 0;
-
 var bananaAvg = [];
-var bananaAverage = 0;
-
 var grapeAvg = [];
-var grapeAverage = 0;
 
 $(function (){
   console.log('Document is ready');
 
-  window.setInterval(function(){
-    setTimeout(timesUp,5000)
-  }, 5000);
+  setTimeout (storeIsClosed, 300000);
+
+  var timer = null;
+
+  timer = window.setInterval(function(){
+    setTimeout(timesUp,15000)
+  }, 15000);
 
   var apple = new fruitPrice ('apple', 5.00);
   var orange = new fruitPrice ('orange', 5.00);
@@ -54,7 +51,6 @@ $(function (){
       }
     }
 
-    console.log(fruitArray);
     $('#appleMarketPrice').empty();
     $('#orangeMarketPrice').empty();
     $('#bananaMarketPrice').empty();
@@ -71,17 +67,21 @@ $(function (){
       alert("You got no cash money!");
     } else {
       availableCash = (availableCash - apple.marketPrice);
-      console.log(availableCash);
+      // console.log(availableCash);
       $('#userAvailableCash').empty();
       $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
       appleTotal++;
       $('#appleInventory').empty();
       $('#appleInventory').append(appleTotal);
       appleAvg.push(apple.marketPrice);
+      var appleAverage = 0;
       for (var i = 0; i < appleAvg.length; i++) {
         appleAverage += Number(appleAvg[i]);
       }
+      console.log(appleAvg);
+      console.log(appleAverage);
       appleAverage = Number(appleAverage / appleAvg.length);
+      console.log(appleAverage);
       $('#appleAvgPrice').text('');
       $('#appleAvgPrice').append(appleAverage.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
 
@@ -92,13 +92,14 @@ $(function (){
       alert("You got no cash money!");
     } else {
       availableCash = (availableCash - orange.marketPrice);
-      console.log(availableCash);
+      // console.log(availableCash);
       $('#userAvailableCash').empty();
       $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
       orangeTotal++;
       $('#orangeInventory').empty();
       $('#orangeInventory').append(orangeTotal);
       orangeAvg.push(orange.marketPrice);
+      var orangeAverage = 0;
       for (var i = 0; i < orangeAvg.length; i++) {
         orangeAverage += Number(orangeAvg[i]);
       }
@@ -113,13 +114,14 @@ $(function (){
       alert("You got no cash money!");
     } else {
       availableCash = (availableCash - banana.marketPrice);
-      console.log(availableCash);
+      // console.log(availableCash);
       $('#userAvailableCash').empty();
       $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
       bananaTotal++;
       $('#bananaInventory').empty();
       $('#bananaInventory').append(bananaTotal);
       bananaAvg.push(banana.marketPrice);
+      var bananaAverage = 0;
       for (var i = 0; i < bananaAvg.length; i++) {
         bananaAverage += Number(bananaAvg[i]);
       }
@@ -134,13 +136,14 @@ $(function (){
       alert("You got no cash money!");
     } else {
       availableCash = (availableCash - grape.marketPrice);
-      console.log(availableCash);
+      // console.log(availableCash);
       $('#userAvailableCash').empty();
       $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
       grapeTotal++;
       $('#grapeInventory').empty();
       $('#grapeInventory').append(grapeTotal);
       grapeAvg.push(grape.marketPrice);
+      var grapeAverage = 0;
       for (var i = 0; i < grapeAvg.length; i++) {
         grapeAverage += Number(grapeAvg[i]);
       }
@@ -149,8 +152,96 @@ $(function (){
       $('#grapeAvgPrice').append(grapeAverage.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
     }
   })
-  
+$('#sellApple').on('click', function() {
+  if (appleTotal < 1) {
+    alert("You can't sell what you don't have!");
+  } else {
+  appleTotal--;
+  $('#appleInventory').empty();
+  $('#appleInventory').append(appleTotal);
+  availableCash = (availableCash + apple.marketPrice);
+  $('#userAvailableCash').empty();
+  $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+}
+})
+$('#sellOrange').on('click', function() {
+  if (orangeTotal < 1) {
+    alert("You can't sell what you don't have!");
+  } else {
+  orangeTotal--;
+  $('#orangeInventory').empty();
+  $('#orangeInventory').append(orangeTotal);
+  availableCash = (availableCash + orange.marketPrice);
+  $('#userAvailableCash').empty();
+  $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+}
+})
+$('#sellBanana').on('click', function() {
+  if (bananaTotal < 1) {
+    alert("You can't sell what you don't have!");
+  } else {
+  bananaTotal--;
+  $('#bananaInventory').empty();
+  $('#bananaInventory').append(bananaTotal);
+  availableCash = (availableCash + banana.marketPrice);
+  $('#userAvailableCash').empty();
+  $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+}
+})
+$('#sellGrape').on('click', function() {
+  if (grapeTotal < 1) {
+    alert("You can't sell what you don't have!");
+  } else {
+  grapeTotal--;
+  $('#grapeInventory').empty();
+  $('#grapeInventory').append(grapeTotal);
+  availableCash = (availableCash + grape.marketPrice);
+  $('#userAvailableCash').empty();
+  $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+}
+})
+
+function storeIsClosed() {
+
+    clearInterval(timer);
+
+    var appleProfit = (appleTotal * apple.marketPrice);
+    appleTotal = 0;
+    $('#appleInventory').empty();
+    $('#appleInventory').append(appleTotal);
+    availableCash = (availableCash + appleProfit);
+    $('#userAvailableCash').empty();
+    $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+
+    var orangeProfit = (orangeTotal * orange.marketPrice);
+    orangeTotal = 0;
+    $('#orangeInventory').empty();
+    $('#orangeInventory').append(orangeTotal);
+    availableCash = (availableCash + orangeProfit);
+    $('#userAvailableCash').empty();
+    $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+
+    var bananaProfit = (bananaTotal * banana.marketPrice);
+    bananaTotal = 0;
+    $('#bananaInventory').empty();
+    $('#bananaInventory').append(bananaTotal);
+    availableCash = (availableCash + bananaProfit);
+    $('#userAvailableCash').empty();
+    $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+
+    var grapeProfit = (grapeTotal * grape.marketPrice);
+    grapeTotal = 0;
+    $('#grapeInventory').empty();
+    $('#grapeInventory').append(grapeTotal);
+    availableCash = (availableCash + grapeProfit);
+    $('#userAvailableCash').empty();
+    $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+
+
+}
+
 });
+
 
 
 function randomNumber(min, max){
